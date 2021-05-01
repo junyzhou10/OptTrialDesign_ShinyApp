@@ -1,5 +1,5 @@
 # OptTrialDesign_ShinyApp
-This shiny app provides a user friendly GUI to implement the optimal trial design strategy in R package OptTrialDesign[!https://github.com/junyzhou10/OptTrialDesign]. 
+This shiny app provides a user friendly GUI to implement the optimal trial design strategy in R package [OptTrialDesign](https://github.com/junyzhou10/OptTrialDesign). 
 
 ## Usage
 Website exhibit:
