@@ -5,6 +5,10 @@ This shiny app provides a user friendly GUI to implement the optimal trial desig
 Website exhibit:
 https://junyzhou.shinyapps.io/OptTrialDesign/
 
-Run in R: shiny::runGitHub("OptTrialDesign_ShinyApp", "junyzhou10", ref = "main")
+Run in R: 
+
+```r
+shiny::runGitHub("OptTrialDesign_ShinyApp", "junyzhou10", ref = "main")
+```
 
 Certain R-packages are required: shiny, shinyWidgets, shinyhelper, DT, plotly, OptTrialDesign. So make sure the packages have already been installed beforehand.
