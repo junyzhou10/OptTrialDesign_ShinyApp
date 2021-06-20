@@ -2,11 +2,11 @@
 # In this app, you could input design parameters, constraints thresholds, and financial settings, 
 # then an optimized trial design, in terms of budget friendly, as well as total cost/revenue, will show as outcome.
 #
-library(shiny)
-library(shinyWidgets)
-library(plotly)
-library(shinyhelper)
-library(DT)
+require(shiny)
+require(shinyWidgets)
+require(plotly)
+require(shinyhelper)
+require(DT)
 require(OptTrialDesign)
 source('str2vec.R')
 
@@ -251,7 +251,7 @@ server <- function(input, output, session) {
   
   ## render pdf review
   output$pdfview <- renderUI({
-    tags$iframe(style="height:1000px; width:100%; scrolling=yes", 
+    tags$iframe(style="height:1000px; width:100%; scrolling=yes",
                 src="Dgn_stgy_Junyi_Nektar.pdf")
   })
   
@@ -318,7 +318,7 @@ server <- function(input, output, session) {
     for (x in obs) {
       obj = findOpt(alpha = In[x,'alpha'], POWER = In[x,'power'], ra = ra0, Sa = In[x,'Sa0'], Ea = In[x,'EA'], lambda = c(In[x,'lambda1'], In[x,'lambda2']), eta = c(In[x,'eta1'], In[x,'eta2']), 
                     alloc = In[x,'alloc'], b = In[x,'b'], c0 = In[x,'c0'], c1 = In[x,'c1'], c2 = In[x,'c2'], dL = In[x,'dL'], d0_r0 = In[x,'d0_r0'], Aj.Ind = input$Aj, t0 = input$t0, e0 = input$e0, p0 = as.numeric(input$p0), m0 = input$m0, nsim = nsim)
-      if (length(obj$Res$ra)>1) {obj$Res$ra=NA}
+      if (length(obj$OptRes$ra)>1) {obj$OptRes$ra=NA}
       Opt = cbind(Opt, unlist(obj$OptRes))
       All.dat = c(All.dat, list(obj$Designs))
       Valid.set = c(Valid.set, list(obj$Valid.set))
